@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>тест мира</title>
+  </head>
+  <body>
+    <script>
+        const fooo = (...arrays) => {
+            let arrr = Object.assign(arrays).slice(1);
+            let firstArray = arrays[0];
+            let twoDigits = firstArray.filter(num => Math.abs(num) >= 10 && Math.abs(num) <= 99);
+            let commonTwoDigits = twoDigits.filter(num => 
+                arrr.every(arr => arr.includes(num))
+            );
+            //document.write(arrays);
+            return [...new Set(commonTwoDigits)];
+        };
+
+        let arr = [1,2,34,50, 50, -11];
+        let arr2 = [1,50, -11];
+        let arr3 = [1,50,98, 11, -11];
+        document.write(fooo(arr,arr2,arr3));
+    </script>
+  </body>
+</html>

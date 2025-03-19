@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Rivers</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <script src="data.js"></script>
+  <script src="table.js"></script>
+  <script src="filter.js"></script>
+  <script src="sort.js"></script>
+</head>
+<body>
+  <p>
+    <a href="index.html">Реки мира</a><br>
+    <a href="rivers.html">Список рек мира</a>
+  </p><hr>
+  <div class="container">
+    <form id="filter">
+      <details>
+        <summary>Фильтр</summary>
+        <p>
+          <label for="name">Название:</label>
+          <input type="text" id="name">
+        </p><br>
+        <p>
+          <label for="lengthFrom">Длина (км)</label>
+          от: <input type="number" id="lengthFrom">
+          до: <input type="number" id="lengthTo">
+        </p><br>
+        <p>
+          <label for="widthFrom">Ширина (км)</label>
+          от: <input type="number" id="widthFrom">
+          до: <input type="number" id="widthTo">
+        </p><br>
+        <p>
+          <label for="max_depthFrom">Максимальная глубина (м)</label>
+          от: <input type="number" id="max_depthFrom">
+          до: <input type="number" id="max_depthTo">
+        </p><br>
+        <p>
+          <label for="water_flowFrom">Расход воды (м³/с)</label>
+          от: <input type="number" id="water_flowFrom">
+          до: <input type="number" id="water_flowTo">
+        </p><br>
+        <p>
+          <label for="flow_speedFrom">Скорость течения (м/с)</label>
+          от: <input type="number" id="flow_speedFrom">
+          до: <input type="number" id="flow_speedTo">
+        </p><br>
+        <p>
+          <label for="continent">Континент:</label>
+          <select id="continent">
+            <option value="0" selected>Не выбрано</option>
+            <option value="африка">Африка</option>
+            <option value="азия">Азия</option>
+            <option value="северная америка">Северная Америка</option>
+            <option value="южная америка">Южная Америка</option>
+            <option value="европа">Европа</option>
+            <option value="австралия">Австралия</option>
+          </select>
+        </p><br>
+        <p>
+          <label for="source_country">Страна истока:</label>
+          <input type="text" id="source_country">
+        </p><br>
+        <input type="button" value="Найти">
+        <input type="button" value="Очистить фильтры">
+      </details>
+    </form>
+
+    <form id="sort">
+      <details>
+        <summary>Сортировка</summary>
+        <p>
+          <label for="fieldsFirst">Первый уровень:</label>
+          <select id="fieldsFirst">
+            <option value="0">Нет</option>
+            <option value="1">Название</option>
+            <option value="2">Длина</option>
+            <option value="3">Ширина</option>
+            <option value="4">Максимальная глубина</option>
+            <option value="5">Расход воды</option>
+            <option value="6">Скорость течения</option>
+            <option value="7">Континент</option>
+            <option value="8">Страна истока</option>
+          </select>
+          по убыванию? <input type="checkbox" id="fieldsFirstDesc">
+        </p>
+        <p>
+          <label for="fieldsSecond">Второй уровень:</label>
+          <select id="fieldsSecond">
+            <option value="0">Нет</option>
+            <option value="1">Название</option>
+            <option value="2">Длина</option>
+            <option value="3">Ширина</option>
+            <option value="4">Максимальная глубина</option>
+            <option value="5">Расход воды</option>
+            <option value="6">Скорость течения</option>
+            <option value="7">Континент</option>
+            <option value="8">Страна истока</option>
+          </select>
+          по убыванию? <input type="checkbox" id="fieldsSecondDesc">
+        </p>
+        <p>
+          <label for="fieldsThird">Третий уровень:</label>
+          <select id="fieldsThird">
+            <option value="0">Нет</option>
+            <option value="1">Название</option>
+            <option value="2">Длина</option>
+            <option value="3">Ширина</option>
+            <option value="4">Максимальная глубина</option>
+            <option value="5">Расход воды</option>
+            <option value="6">Скорость течения</option>
+            <option value="7">Континент</option>
+            <option value="8">Страна истока</option>
+          </select>
+          по убыванию? <input type="checkbox" id="fieldsThirdDesc">
+        </p>
+        <input type="button" value="Сортировать">
+        <input type="button" value="Сбросить сортировку">
+      </details>
+    </form>
+  </div>
+  <table id="list"></table>
+
+  <script src="main.js"></script>
+</body>
+</html>
