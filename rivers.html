@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <title>Rivers</title>
   <link rel="stylesheet" href="CSS/style.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="data.js"></script>
   <script src="table.js"></script>
   <script src="filter.js"></script>
   <script src="sort.js"></script>
+  <script src="chart.js"></script>
 </head>
 <body>
   <p>
@@ -120,6 +122,48 @@
         <input type="button" value="Сбросить сортировку">
       </details>
     </form>
+
+    <form id="graph">
+      <details>
+        <summary>График</summary>
+        <div class="graph">
+          <div>
+            <label>Значение по оси OX</label><br><br>
+            <input type="radio" id="xSourceCountry" name="xAxis" value="Страна истока" checked>
+            <label for="xSourceCountry">Страна истока</label><br>
+            <input type="radio" id="xContinent" name="xAxis" value="Континент">
+            <label for="xContinent">Континент</label>
+          </div>
+          <div>
+            <label>Значение по оси OY</label><br><br>
+            <input type="checkbox" id="avg_length" value="averageLength">
+            <label for="avg_length">Средняя длина</label><br>
+            <input type="checkbox" id="avg_width" value="averageWidth">
+            <label for="avg_width">Средняя ширина</label><br>
+            <input type="checkbox" id="river_count" value="riverCount">
+            <label for="river_count">Количество рек</label>
+          </div>
+          <div>
+            <label for="type">Тип графика</label>
+            <select id="type">
+              <option value="dotted">Точечная диаграмма</option>
+              <option value="histogram">Гистограмма</option>
+              <option value="line">Линии</option>
+            </select>
+          </div>
+          <div>
+            <input type="button" id="drawButton" value="Построить">
+            <input type="button" id="resetGraphButton" value="Сбросить график">
+          </div>
+          <svg width="900" height="600"></svg>
+          
+        </div>
+      </details>
+      
+    </form>
+    <div class="control-container">
+      <input type="button" id="tableButton" value="Скрыть таблицу">
+    </div>
   </div>
   <table id="list"></table>
 
